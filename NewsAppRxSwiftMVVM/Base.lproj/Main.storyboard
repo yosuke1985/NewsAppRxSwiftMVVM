@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--News App Home Table View Controller-->
+        <!--News-->
         <scene sceneID="7Zn-YE-AfN">
             <objects>
                 <tableViewController id="5Be-rf-bwK" customClass="NewsAppHomeTableViewController" customModule="NewsAppRxSwiftMVVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,9 +56,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="descriptionLabel" destination="XTD-ig-adX" id="Tu7-6l-b6I"/>
-                                    <outlet property="thumnailImage" destination="R3z-tY-otg" id="UaZ-FE-glM"/>
-                                    <outlet property="titleLabel" destination="Tga-po-kT1" id="cRS-1I-rFv"/>
+                                    <outlet property="descriptionLabel" destination="XTD-ig-adX" id="FiJ-7F-hgE"/>
+                                    <outlet property="thumnailImage" destination="R3z-tY-otg" id="tRR-Am-NZs"/>
+                                    <outlet property="titleLabel" destination="Tga-po-kT1" id="oFR-JF-Sqj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -67,7 +67,7 @@
                             <outlet property="delegate" destination="5Be-rf-bwK" id="O8q-DW-luG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="X07-wF-Hpv"/>
+                    <navigationItem key="navigationItem" title="News" id="X07-wF-Hpv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6x-21-EmA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
