@@ -9,36 +9,18 @@
 import Foundation
 import RxSwift
 
-struct Resource<T> {
-    var url: String
-    
-    init(url: String) {
-        self.url = url
-    }
+struct Resource<T: Codable> {
+    let url: URL
 }
 
-// https://mobikul.com/rest-api-calling-using-rxswift/ を改修して作成した。
 extension URLRequest {
-        func load<T: Codable>(resource: Resource<T>) -> Observable<T> {
-            return Observable<T>.create { observer in
-                guard let url = URL(string: resource.url) else { return Disposables.create {} }
-                
-                let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                    if let data = data{
-                        do {
-                            let model: T = try JSONDecoder().decode(T.self, from: data)
-                            observer.onNext(model)
-                        } catch let error {
-                            observer.onError(error)
-                        }
-                        observer.onCompleted()
-                    }
-                }
-                task.resume()
-                
-                return Disposables.create {
-                    task.cancel()
-                }
+        static func load<T>(resource: Resource<T>) -> Observable<T> {
+            return Observable.just(resource.url)
+                .flatMap { url -> Observable<Data> in
+                    let request = URLRequest(url: url)
+                    return URLSession.shared.rx.data(request: request)
+                }.map { data -> T in
+                    return try JSONDecoder().decode(T.self, from: data)
             }
         }
 }
