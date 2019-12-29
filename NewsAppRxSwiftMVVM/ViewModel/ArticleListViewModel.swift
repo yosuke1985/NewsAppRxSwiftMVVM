@@ -16,6 +16,10 @@ struct ArticleListViewModel {
     init(articles: [Article]) {
         self.articles = articles.compactMap(ArticleViewModel.init)
     }
+    
+    func rowAt(index: Int) -> ArticleViewModel{
+        return articles[index]
+    }
 }
 
 struct ArticleViewModel {
