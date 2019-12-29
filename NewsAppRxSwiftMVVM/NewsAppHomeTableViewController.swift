@@ -43,14 +43,48 @@ class NewsAppHomeTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.articleListViewModel == nil ? 0: self.articleListViewModel.articles.count
+
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 139.0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ArticleTableViewCell else { fatalError("ArticleTableViewCell is not found") }
+        
+        let articleVM = self.articleListViewModel.rowAt(index: indexPath.row)
+        
+        articleVM.title.asDriver(onErrorJustReturn: "")
+            .drive(cell.titleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        articleVM.description.asDriver(onErrorJustReturn: "")
+            .drive(cell.descriptionLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        articleVM.urlToImage.asObservable()
+            .subscribe( onNext: { value in
+                cell.urlToImage = value
+                cell.setImage(urlString: value)
+            })
+            .disposed(by: disposeBag)
+        
+        articleVM.url.asObservable()
+            .subscribe( onNext: { value in
+                cell.urlPage = value
 
-  
-
+            })
+            .disposed(by: disposeBag)
+        
+        return cell
+    }
+    
+    
 }
