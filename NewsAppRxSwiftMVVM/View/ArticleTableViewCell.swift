@@ -7,17 +7,28 @@
 //
 
 import UIKit
+import RxCocoa
 
 class ArticleTableViewCell: UITableViewCell {
     
-    @IBOutlet var titleLabel: String!
-    @IBOutlet var descriptionLabel: String!
-    @IBOutlet var thumnailImage: String!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var thumnailImage: UIImageView!
+    var urlToImage: String?
     var urlPage: String = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func setImage(urlString: String){
+        let url = URL(string: urlString)
+        do {
+            let data = try Data(contentsOf: url!)
+            self.thumnailImage.image = UIImage(data: data)
+         }catch let err {
+            print("Error : \(err.localizedDescription)")
+         }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
