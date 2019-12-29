@@ -13,7 +13,8 @@ class NewsAppHomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
 
     // MARK: - Table view data source
