@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		279313601BE2C39DA9A784FB /* Pods_NewsAppRxSwiftMVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A50EB89B8014FD51716EA1A /* Pods_NewsAppRxSwiftMVVMTests.framework */; };
 		BAD6AFEB80E47A42AB08AE77 /* Pods_NewsAppRxSwiftMVVM_NewsAppRxSwiftMVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38626EA18BB2B61FFA133CC5 /* Pods_NewsAppRxSwiftMVVM_NewsAppRxSwiftMVVMUITests.framework */; };
+		EA71654223B8A86B00A0F136 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA71654123B8A86B00A0F136 /* README.md */; };
 		EAA0DC3523B61609005DA694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0DC3423B61609005DA694 /* AppDelegate.swift */; };
 		EAA0DC3723B61609005DA694 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0DC3623B61609005DA694 /* SceneDelegate.swift */; };
 		EAA0DC3C23B61609005DA694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA0DC3A23B61609005DA694 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		50CA70AAEE14B8544FB88787 /* Pods-NewsAppRxSwiftMVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppRxSwiftMVVMTests.release.xcconfig"; path = "Target Support Files/Pods-NewsAppRxSwiftMVVMTests/Pods-NewsAppRxSwiftMVVMTests.release.xcconfig"; sourceTree = "<group>"; };
 		61594E7FAAD58AE694F087D9 /* Pods_NewsAppRxSwiftMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsAppRxSwiftMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31E75F1048EE1C3207B23E0 /* Pods-NewsAppRxSwiftMVVMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppRxSwiftMVVMTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsAppRxSwiftMVVMTests/Pods-NewsAppRxSwiftMVVMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA71654123B8A86B00A0F136 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EAA0DC3123B61609005DA694 /* NewsAppRxSwiftMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsAppRxSwiftMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA0DC3423B61609005DA694 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAA0DC3623B61609005DA694 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		EAA0DC2823B61609005DA694 = {
 			isa = PBXGroup;
 			children = (
+				EA71654123B8A86B00A0F136 /* README.md */,
 				EAA0DC3323B61609005DA694 /* NewsAppRxSwiftMVVM */,
 				EAA0DC4A23B6160D005DA694 /* NewsAppRxSwiftMVVMTests */,
 				EAA0DC5523B6160D005DA694 /* NewsAppRxSwiftMVVMUITests */,
@@ -315,6 +318,7 @@
 			files = (
 				EAA0DC4123B6160D005DA694 /* LaunchScreen.storyboard in Resources */,
 				EAA0DC3E23B6160D005DA694 /* Assets.xcassets in Resources */,
+				EA71654223B8A86B00A0F136 /* README.md in Resources */,
 				EAA0DC3C23B61609005DA694 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

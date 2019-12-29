@@ -48,7 +48,6 @@
 - struct
 - ArticleResponseはArticleを複数もつ。
 - Article、記事のエンティ
-  - <https://newsapi.org/v2/top-headlines?country=jp&apiKey=0cf790498275413a9247f8b94b3843fd>
     - title
     - description
     - url
