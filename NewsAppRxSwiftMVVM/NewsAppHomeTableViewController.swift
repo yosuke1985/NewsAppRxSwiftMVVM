@@ -7,13 +7,35 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class NewsAppHomeTableViewController: UITableViewController {
+    
+    private let disposeBag = DisposeBag()
+    var articleListViewModel: ArticleListViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
+
+        self.navigationController?.title = "Newsアプリ"
+        self.fetchAPIAndSetVM()
+    }
+    
+    private func fetchAPIAndSetVM(){
+        
+        let resource = Resource<ArticleResponse>(url: URL(string: "https://newsapi.org/v2/top-headlines?country=jp&apiKey=0cf790498275413a9247f8b94b3843fd")!)
+        
+        URLRequest.load(resource: resource)
+            .subscribe(onNext: { response in
+                self.articleListViewModel = ArticleListViewModel(articles: response.articles)
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }).disposed(by: disposeBag)
         
     }
 
